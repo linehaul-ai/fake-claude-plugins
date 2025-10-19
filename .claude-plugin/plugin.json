@@ -1,0 +1,13 @@
+{
+  "name": "mcp-dev-go-sdk-agent",
+  "description": "Claude Code sub-agent for building HTTP MCP Servers with the MCP Go SDK",
+  "version": "0.0.1",
+  "author": {
+    "name": "anthony fecarotta",
+    "email": "contact@linehaul.ai"
+  },
+  "keywords": ["devops", "testing", "mcp", "claude", "http", "go"],
+  "agents": ["./agents/mcp-dev-go-sdk-agent.md"],
+  "commands": "./commands/",
+  "hooks": "./hooks/hooks.json"
+}
