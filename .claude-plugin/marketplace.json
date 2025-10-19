@@ -9,10 +9,7 @@
       "name": "mcp-dev-go-sdk-agent",
       "description": "Claude Code sub-agent for building HTTP MCP Servers with the MCP Go SDK",
       "version": "0.0.1",
-      "source": {
-        "source": "github",
-        "repo": "linehaul-ai/fake-claude-plugins"
-      },
+      "source": "./",
       "author": {
         "name": "anthony fecarotta",
         "email": "contact@linehaul.ai"
