@@ -1,0 +1,14 @@
+# Go
+*.o
+*.a
+*.so
+
+# Binaries
+/tmp/mcp-server
+
+# IDEs
+.idea/
+.vscode/
+
+# OS
+.DS_Store
