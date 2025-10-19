@@ -1,74 +1,26 @@
 {
   "name": "fake-claude-plugins",
-  "author": {
-    "name": "anthony fecarotta"
+  "owner": {
+    "name": "anthony fecarotta",
+    "email": "contact@linehaul.ai"
   },
   "plugins": [
     {
-      "name": "mcp-dev-go-sdk-agent.md",
+      "name": "mcp-dev-go-sdk-agent",
       "description": "Claude Code sub-agent for building HTTP MCP Servers with the MCP Go SDK",
       "version": "0.0.1",
-      "author": "linehaul.ai",
+      "source": {
+        "source": "github",
+        "repo": "linehaul-ai/fake-claude-plugins"
+      },
+      "author": {
+        "name": "anthony fecarotta",
+        "email": "contact@linehaul.ai"
+      },
       "keywords": ["devops", "testing", "mcp", "claude", "http", "go"],
-
-      "agents": ["../agents/mcp-dev-go-sdk-agent.md"],
-      "commands": [
-        {
-          "name": "Check Tool Consistency",
-          "description": "Check for consistency between a tool's definition and its Go implementation.",
-          "path": "../commands/check-tool-consistency.md",
-          "keywords": ["mcp", "tool", "consistency", "validation", "go"]
-        },
-        {
-          "name": "Fix MCP Patterns",
-          "description": "Identify and correct common anti-patterns in an MCP server implementation.",
-          "path": "../commands/fix-mcp-patterns.md",
-          "keywords": ["mcp", "patterns", "refactor", "best practices", "go"]
-        },
-        {
-          "name": "Generate Client Method",
-          "description": "Generate a new client method from an OpenAPI specification.",
-          "path": "../commands/generate-client-method.md",
-          "keywords": ["mcp", "client", "generate", "openapi", "go"]
-        },
-        {
-          "name": "Generate MCP Tool",
-          "description": "Generate a new MCP tool from a Go function or method signature.",
-          "path": "../commands/generate-mcp-tool.md",
-          "keywords": ["mcp", "tool", "generate", "go"]
-        },
-        {
-          "name": "Generate Tool Test",
-          "description": "Generate a new test for a specific MCP tool.",
-          "path": "../commands/generate-tool-test.md",
-          "keywords": ["mcp", "tool", "test", "generate", "go"]
-        },
-        {
-          "name": "Review API Client",
-          "description": "Review the API client code for best practices and potential improvements.",
-          "path": "../commands/review-api-client.md",
-          "keywords": ["mcp", "client", "review", "best practices", "go"]
-        },
-        {
-          "name": "Review MCP Tools",
-          "description": "Review all MCP tools for correctness and adherence to best practices.",
-          "path": "../commands/review-mcp-tools.md",
-          "keywords": ["mcp", "tool", "review", "best practices", "go"]
-        },
-        {
-          "name": "Test MCP Server",
-          "description": "Test the MCP server by sending a series of requests to its endpoints.",
-          "path": "../commands/test-mcp-server.md",
-          "keywords": ["mcp", "server", "test", "http", "go"]
-        },
-        {
-          "name": "Validate MCP Server",
-          "description": "Validate the MCP server's configuration and tool definitions.",
-          "path": "../commands/validate-mcp-server.md",
-          "keywords": ["mcp", "server", "validation", "configuration", "go"]
-        }
-      ],
-      "hooks": "../hooks/hooks.json"
+      "agents": ["./agents/mcp-dev-go-sdk-agent.md"],
+      "commands": "./commands/",
+      "hooks": "./hooks/hooks.json"
     }
   ]
 }
