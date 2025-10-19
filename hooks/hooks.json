@@ -1,0 +1,73 @@
+// .claude/hooks.json
+
+{
+  "hooks": [
+    {
+      "name": "Format Go Code",
+      "trigger": "on_save",
+      "pattern": "**/*.go",
+      "commands": [
+        {
+          "run": "go fmt {file}",
+          "silent": true
+        },
+        {
+          "run": "go vet {file}",
+          "continue_on_error": true
+        }
+      ]
+    },
+    {
+      "name": "Review MCP Tool",
+      "trigger": "on_save",
+      "pattern": "internal/tools/*.go",
+      "commands": [
+        {
+          "ai": true,
+          "prompt": "@mcp-dev-go-sdk-agent Review this tool file for proper MCP patterns, jsonschema tags, and error handling"
+        }
+      ]
+    },
+    {
+      "name": "Review API Client",
+      "trigger": "on_save",
+      "pattern": "internal/client/*.go",
+      "commands": [
+        {
+          "ai": true,
+          "prompt": "@mcp-dev-go-sdk-agent Review this API client for proper error handling, context propagation, and HTTP best practices"
+        }
+      ]
+    },
+    {
+      "name": "Pre-commit Checks",
+      "trigger": "pre_commit",
+      "commands": [
+        {
+          "name": "Run Tests",
+          "run": "go test ./..."
+        },
+        {
+          "name": "Build Server",
+          "run": "go build -o /tmp/mcp-server cmd/server/main.go"
+        },
+        {
+          "name": "MCP Structure Check",
+          "ai": true,
+          "prompt": "@mcp-dev-go-sdk-agent Verify all tools are properly registered in internal/server/server.go"
+        }
+      ]
+    },
+    {
+      "name": "Tidy Dependencies",
+      "trigger": "on_file_create",
+      "pattern": "go.mod",
+      "commands": [
+        {
+          "run": "go mod tidy",
+          "silent": true
+        }
+      ]
+    }
+  ]
+}
